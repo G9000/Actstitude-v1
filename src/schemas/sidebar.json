@@ -1,0 +1,39 @@
+{
+  "Main": {
+    "company_logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "company logo"
+      }
+    },
+    "email": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Email"
+      }
+    },
+    "instagram": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Instagram"
+      }
+    },
+    "facebook": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Facebook"
+      }
+    },
+    "linkedin": {
+      "type": "Link",
+      "config": {
+        "label": "LinkedIn"
+      }
+    }
+  }
+}
