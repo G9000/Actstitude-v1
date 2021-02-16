@@ -69,6 +69,7 @@ const HeroSection = () => {
               bg="transparent"
               w="100%"
               h="100%"
+              fontSize="1.75rem"
               borderRadius="none"
               border="0.5px solid #A7A7A7"
               className="grid-items-cta"

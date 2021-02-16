@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        repositoryName: process.env.GATSBY.PRISMIC_REPOSITORY_NAME,
+        accessToken: process.env.GATSBY.PRISMIC_ACCESS_TOKEN,
         schemas: {
           sidebar: require("./src/schemas/sidebar.json"),
           home: require("./src/schemas/homepage.json"),
