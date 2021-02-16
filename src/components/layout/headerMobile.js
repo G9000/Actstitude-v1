@@ -146,7 +146,7 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
 export const ModalMenuLinks = () => {
   return (
     <Stack w="90%" margin="0 auto" spacing="5rem">
-      <Stack spacing="1.5rem">
+      <Stack spacing="1rem">
         <MenuItem to="/about">About</MenuItem>
         <MenuItem to="/news">News</MenuItem>
         <MenuItem to="/about">Partners</MenuItem>
