@@ -80,7 +80,7 @@ const HeaderMobile = () => {
         <Modal isOpen={isOpen}>
           <ModalOverlay bg="black.700" />
           <ModalContent
-            maxW="100%"
+            maxW="90%"
             pt="100px"
             height="100vh"
             bg="black.700"
