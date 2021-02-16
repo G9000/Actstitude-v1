@@ -42,7 +42,7 @@ export const ContactButtonMobile = ({ children, ...props }) => (
     bg="transparent"
     justifyContent="center"
     borderRadius="0"
-    border="0.5px solid white"
+    borderLeft="0.5px solid white"
     _hover={{
       bg: "white.50",
       color: "black.700",
