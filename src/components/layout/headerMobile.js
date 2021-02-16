@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import {
   Box,
@@ -11,17 +11,11 @@ import {
   ModalOverlay,
   ModalContent,
   Button,
+  useDisclosure,
 } from "@chakra-ui/react"
-import { SocialIcon } from "../buttons/social buttons/index"
-import { ContactButtonMobile } from "../buttons/contact buttons/index"
-import "./style.css"
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaAngleDoubleRight,
-} from "react-icons/fa"
 import styled from "@emotion/styled"
+import "./style.css"
+import { ContactButtonMobile } from "../buttons/contact buttons/index"
 
 const HeaderMobile = () => {
   const data = useStaticQuery(graphql`
@@ -48,7 +42,7 @@ const HeaderMobile = () => {
       }
     }
   `)
-  const [isOpen, setIsOpen] = React.useState(isOpen)
+  const [isOpen, setIsOpen] = React.useState(false)
   return (
     <Box
       borderBottom=".5px solid #525050"
@@ -85,7 +79,7 @@ const HeaderMobile = () => {
         </Box>
       </Flex>
 
-      <Modal width="100%" isOpen={isOpen}>
+      <Modal isOpen={isOpen}>
         <ModalOverlay bg="black.900" />
         <ModalContent
           height="100vh"
@@ -137,8 +131,7 @@ const MenuIconBox = styled(Box)`
     }
   }
 `
-
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
     <Link to={to}>
       <Text
@@ -154,8 +147,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   )
 }
 
-const ModalMenuLinks = () => {
-  const [value, setValue] = React.useState()
+export const ModalMenuLinks = () => {
   return (
     <Flex
       w="80%"
