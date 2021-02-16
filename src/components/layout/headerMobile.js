@@ -80,15 +80,15 @@ const HeaderMobile = () => {
       </Flex>
 
       <Modal isOpen={isOpen}>
-        <ModalOverlay bg="black.900" />
+        <ModalOverlay bg="black.700" />
         <ModalContent
+          maxW="100%"
+          pt="100px"
           height="100vh"
           bg="black.700"
           display="block"
           color="white.50"
-          mt="0"
-          mb="0"
-          maxW="100%"
+          margin="0 auto"
         >
           <ModalMenuLinks />
         </ModalContent>
@@ -149,13 +149,7 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
 
 export const ModalMenuLinks = () => {
   return (
-    <Flex
-      w="80%"
-      margin="auto"
-      justify="space-between"
-      py={{ base: "20%", xl: "10%" }}
-      h="100%"
-    >
+    <Flex w="80%" margin="auto" justify="space-between" h="100%">
       <Stack w="100%" spacing="5rem" direction="column" justify="flex-start">
         <Stack spacing="1.5rem">
           <MenuItem to="/about">About</MenuItem>
