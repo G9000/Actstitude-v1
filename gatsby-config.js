@@ -38,6 +38,7 @@ module.exports = {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         schemas: {
           sidebar: require("./src/schemas/sidebar.json"),
+          home: require("./src/schemas/homepage.json"),
         },
       },
     },

@@ -27,3 +27,29 @@ export const ContactButton = ({ children, ...props }) => (
     {children}
   </Button>
 )
+
+export const ContactButtonMobile = ({ children, ...props }) => (
+  <Button
+    rightIcon={<FaAngleDoubleRight />}
+    height="70px"
+    width="100%"
+    padding=".5rem 1.5rem"
+    fontWeight="400"
+    letterSpacing="1px"
+    textAlign="center"
+    fontSize="1.5rem"
+    color="white.50"
+    bg="transparent"
+    justifyContent="center"
+    borderRadius="0"
+    border="0.5px solid white"
+    _hover={{
+      bg: "white.50",
+      color: "black.700",
+      textDecoration: "none",
+    }}
+    {...props}
+  >
+    {children}
+  </Button>
+)

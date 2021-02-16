@@ -1,0 +1,26 @@
+{
+  "Main": {
+    "greeting": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Greeting"
+      }
+    },
+    "main_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Main Heading"
+      }
+    },
+    "hero_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "hero image"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.hero-image {
+  height: 755px;
+  width: 100%;
+}
+
+.hero-items {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-rows: 90% 10%;
+}
+.grid-items-column {
+  border-left: 0.5px solid #a7a7a7;
+}
+
+.box1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.box4 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.grid-items-cta {
+  grid-row-start: 2;
+  grid-column-start: 3;
+}
+
+.grid-items-extender {
+  grid-row-start: 2;
+  grid-column-start: 4;
+  border: 0.5px solid #a7a7a7;
+}

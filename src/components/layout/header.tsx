@@ -37,7 +37,11 @@ const Header = () => {
     }
   `)
   return (
-    <Flex
+    <Box
+      position="sticky"
+      top="0"
+      left="0"
+      display={{ base: "none", xl: "flex" }}
       h="100vh"
       w="100px"
       flexDirection="column"
@@ -88,7 +92,7 @@ const Header = () => {
           <FaLinkedinIn />
         </SocialIcon>
       </Stack>
-    </Flex>
+    </Box>
   )
 }
 

@@ -1,15 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Box } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 import Header from "./header"
+import HeaderMobile from "./headerMobile"
 
 const Layout = ({ children }) => {
   return (
     <Box bg="black.700">
-      <Box>
+      <Flex flexDirection={{ base: "column", xl: "row" }}>
         <Header />
-        {children}
-      </Box>
+        <HeaderMobile />
+        <Box>{children}</Box>
+      </Flex>
     </Box>
   )
 }
