@@ -32,7 +32,7 @@ export const ContactButtonMobile = ({ children, ...props }) => (
   <Button
     rightIcon={<FaAngleDoubleRight />}
     height="70px"
-    width="90%"
+    width="100%"
     padding=".5rem 1rem"
     fontWeight="400"
     letterSpacing="1px"

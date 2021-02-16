@@ -78,12 +78,10 @@ const HeaderMobile = () => {
           </MenuIconBox>
         </Box>
         <Modal isOpen={isOpen}>
-          <ModalOverlay bg="black.700" />
           <ModalContent
+            h="100vh"
             pt="100px"
-            height="100vh"
             bg="black.700"
-            display="block"
             color="white.50"
             margin="0 auto"
           >
@@ -147,17 +145,15 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
 
 export const ModalMenuLinks = () => {
   return (
-    <Flex w="80%" margin="auto" justify="space-between" h="100%">
-      <Stack w="100%" spacing="5rem" direction="column" justify="flex-start">
-        <Stack spacing="1.5rem">
-          <MenuItem to="/about">About</MenuItem>
-          <MenuItem to="/news">News</MenuItem>
-          <MenuItem to="/about">Partners</MenuItem>
-          <MenuItem to="/career">Career</MenuItem>
-          <MenuItem to="/about">Contact</MenuItem>
-        </Stack>
-        <ContactButtonMobile>Work with us</ContactButtonMobile>
+    <Stack w="90%" margin="0 auto" spacing="5rem">
+      <Stack spacing="1.5rem">
+        <MenuItem to="/about">About</MenuItem>
+        <MenuItem to="/news">News</MenuItem>
+        <MenuItem to="/about">Partners</MenuItem>
+        <MenuItem to="/career">Career</MenuItem>
+        <MenuItem to="/about">Contact</MenuItem>
       </Stack>
-    </Flex>
+      <ContactButtonMobile>Work with us</ContactButtonMobile>
+    </Stack>
   )
 }
