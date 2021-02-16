@@ -1,23 +1,24 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Box, Flex } from "@chakra-ui/react"
 import Header from "./header"
 import HeaderMobile from "./headerMobile"
 
-const Layout = ({ children }) => {
-  return (
-    <Box bg="black.700">
-      <Flex flexDirection={{ base: "column", xl: "row" }}>
-        <Header />
-        <HeaderMobile />
-        <Box>{children}</Box>
-      </Flex>
-    </Box>
-  )
+interface LayoutProps {
+  children(): void
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
+  return (
+    <>
+      <Box bg="black.700">
+        <Flex flexDirection={{ base: "column", lg: "row" }}>
+          <Header />
+          <HeaderMobile />
+          <Box>{children}</Box>
+        </Flex>
+      </Box>
+    </>
+  )
 }
 
 export default Layout

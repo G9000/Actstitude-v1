@@ -41,7 +41,7 @@ const Header = () => {
       position="sticky"
       top="0"
       left="0"
-      display={{ base: "none", xl: "flex" }}
+      display={{ base: "none", lg: "flex" }}
       h="100vh"
       w="100px"
       flexDirection="column"

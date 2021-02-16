@@ -48,11 +48,14 @@ const HeaderMobile = () => {
       }
     }
   `)
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(isOpen)
   return (
-    <Box borderBottom=".5px solid #525050" h="100px">
-      <Box
-        display={{ base: "flex", xl: "none" }}
+    <Box
+      borderBottom=".5px solid #525050"
+      h="100px"
+      display={{ base: "block", lg: "none" }}
+    >
+      <Flex
         h="100%"
         w="90%"
         margin="auto"
@@ -80,7 +83,7 @@ const HeaderMobile = () => {
             <div />
           </MenuIconBox>
         </Box>
-      </Box>
+      </Flex>
 
       <Modal width="100%" isOpen={isOpen}>
         <ModalOverlay bg="black.900" />

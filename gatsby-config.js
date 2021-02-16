@@ -42,6 +42,20 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        mode: "async",
+        enableListener: true,
+        preconnect: ["https://use.typekit.net"],
+        web: [
+          {
+            name: "proxima-nova, sans-serif",
+            file: "https://use.typekit.net/wij1lzu.css",
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

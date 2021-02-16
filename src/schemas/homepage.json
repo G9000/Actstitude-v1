@@ -21,6 +21,12 @@
         "thumbnails": [],
         "label": "hero image"
       }
+    },
+    "hero_button": {
+      "type": "Text",
+      "config": {
+        "label": "hero button"
+      }
     }
   }
 }
