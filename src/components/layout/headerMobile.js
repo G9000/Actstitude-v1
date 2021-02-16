@@ -77,22 +77,21 @@ const HeaderMobile = () => {
             <div />
           </MenuIconBox>
         </Box>
+        <Modal isOpen={isOpen}>
+          <ModalOverlay bg="black.700" />
+          <ModalContent
+            maxW="100%"
+            pt="100px"
+            height="100vh"
+            bg="black.700"
+            display="block"
+            color="white.50"
+            margin="0 auto"
+          >
+            <ModalMenuLinks />
+          </ModalContent>
+        </Modal>
       </Flex>
-
-      <Modal isOpen={isOpen}>
-        <ModalOverlay bg="black.700" />
-        <ModalContent
-          maxW="100%"
-          pt="100px"
-          height="100vh"
-          bg="black.700"
-          display="block"
-          color="white.50"
-          margin="0 auto"
-        >
-          <ModalMenuLinks />
-        </ModalContent>
-      </Modal>
     </Box>
   )
 }
