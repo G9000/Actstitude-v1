@@ -1,0 +1,83 @@
+{
+  "Main": {
+    "footer": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Footer",
+        "placeholder": "Footer"
+      }
+    },
+    "tagline": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Tagline"
+      }
+    },
+    "malaysia": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading5",
+        "label": "Malaysia"
+      }
+    },
+    "malaysia_address_line_1": {
+      "type": "Text",
+      "config": {
+        "label": "Malaysia address line 1"
+      }
+    },
+    "malaysia_address_line_2": {
+      "type": "Text",
+      "config": {
+        "label": "Malaysia address line 2"
+      }
+    },
+    "malaysia_address_line_3": {
+      "type": "Text",
+      "config": {
+        "label": "Malaysia address line 3"
+      }
+    },
+    "malaysia_location": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Malaysia google location"
+      }
+    },
+    "singapore": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading5",
+        "label": "Singapore"
+      }
+    },
+    "singapore_address_line_1": {
+      "type": "Text",
+      "config": {
+        "label": "Singapore address line 1"
+      }
+    },
+    "singapore_address_line_2": {
+      "type": "Text",
+      "config": {
+        "label": "Singapore address line 2"
+      }
+    },
+    "singapore_address_line_3": {
+      "type": "Text",
+      "config": {
+        "label": "Singapore address line 3"
+      }
+    },
+    "singapore_location": {
+      "type": "Link",
+      "config": {
+        "label": "Singapore google location",
+        "allowTargetBlank": true
+      }
+    }
+  }
+}

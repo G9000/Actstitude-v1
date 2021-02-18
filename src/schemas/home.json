@@ -1,0 +1,134 @@
+{
+  "Main": {
+    "greeting": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Greeting"
+      }
+    },
+    "main_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Main Heading"
+      }
+    },
+    "hero_button_label": {
+      "type": "Text",
+      "config": {
+        "label": "Hero button label"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "service": [],
+          "clientele": []
+        },
+        "choices": {
+          "service": {
+            "type": "Slice",
+            "fieldset": "Service",
+            "description": "Service",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {
+              "service_label": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "Service Label"
+                }
+              },
+              "service_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Service Heading"
+                }
+              },
+              "service_button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Service button label"
+                }
+              },
+              "redirect_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Redirect label"
+                }
+              }
+            },
+            "repeat": {
+              "service_thumbnail": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Service thumbnail"
+                }
+              },
+              "service_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Service name"
+                }
+              },
+              "service_description": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Service description"
+                }
+              }
+            }
+          },
+          "clientele": {
+            "type": "Slice",
+            "fieldset": "Clientele",
+            "description": "Clientele",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {
+              "clientele_label": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "Clientele label"
+                }
+              },
+              "clientele_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Clientele heading"
+                }
+              },
+              "clientele_button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Clientele button label"
+                }
+              }
+            },
+            "repeat": {
+              "client_logo": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Client logo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Actstitude`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@JulioCaesar`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,7 +39,12 @@ module.exports = {
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
         schemas: {
           sidebar: require("./src/schemas/sidebar.json"),
+          footer: require("./src/schemas/footer.json"),
           home: require("./src/schemas/homepage.json"),
+          homepage_testing: require("./src/schemas/home.json"),
+          services: require("./src/schemas/services.json"),
+          clientele: require("./src/schemas/clientele.json"),
+          call_to_action: require("./src/schemas/cta.json"),
         },
       },
     },

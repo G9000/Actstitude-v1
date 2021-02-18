@@ -3,7 +3,7 @@ import { Flex, Heading, Text, Box, Grid, Button } from "@chakra-ui/react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { FaAngleDoubleRight } from "react-icons/fa"
-import { GreetingLabel } from "../../components/typography/label"
+import { Label } from "../../components/typography/label"
 import { MainHeading } from "../../components/typography/heading"
 import "./style.css"
 
@@ -32,25 +32,25 @@ const HeroSection = () => {
   `)
 
   return (
-    <>
+    <div>
       <Flex
         paddingTop="10rem"
-        width="min(1440px, 80%)"
+        width="min(1440px, 90%)"
         flexDirection="column"
-        margin="auto"
+        margin="0 auto"
         color="white.50"
       >
         <Box marginBottom="5rem" w="min(75rem, 100%)">
-          <GreetingLabel>{data.prismicHome.data.greeting.text}</GreetingLabel>
+          <Label>{data.prismicHome.data.greeting.text}</Label>
           <MainHeading mt="2rem">
             {data.prismicHome.data.main_heading.text}
           </MainHeading>
         </Box>
       </Flex>
       <Box
+        margin="0 auto"
         maxW="1440px"
         w={{ base: "100%", md: "80%" }}
-        margin="auto"
         paddingY="2rem"
       >
         <BackgroundImage
@@ -85,7 +85,7 @@ const HeroSection = () => {
           </div>
         </BackgroundImage>
       </Box>
-    </>
+    </div>
   )
 }
 

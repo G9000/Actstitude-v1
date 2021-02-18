@@ -1,7 +1,7 @@
 import React from "react"
 import { Text } from "@chakra-ui/react"
 
-export const GreetingLabel = ({ children, ...props }) => (
+export const Label = ({ children, ...props }) => (
   <Text
     fontSize="1.125rem"
     letterSpacing="3px"

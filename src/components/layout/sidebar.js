@@ -11,7 +11,7 @@ import {
   FaAngleDoubleRight,
 } from "react-icons/fa"
 
-const Header = () => {
+const Sidebar = () => {
   const data = useStaticQuery(graphql`
     query Sidebar {
       prismicSidebar {
@@ -96,4 +96,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Sidebar

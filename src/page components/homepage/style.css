@@ -96,3 +96,16 @@
     grid-column: 2 / span 3;
   }
 }
+
+.service-images {
+  height: 275px;
+  max-width: 370px;
+}
+
+.swiper-slide {
+  width: 370px;
+}
+.swiper-container {
+  padding-left: 10%;
+  padding-right: 5%;
+}

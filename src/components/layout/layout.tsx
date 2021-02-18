@@ -1,7 +1,9 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react"
-import Header from "./header"
+import Sidebar from "./sidebar"
 import HeaderMobile from "./headerMobile"
+import Footer from "./footer"
+import Header from "./header"
 
 interface LayoutProps {
   children(): void
@@ -12,9 +14,12 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
     <>
       <Box bg="black.700">
         <Flex flexDirection={{ base: "column", lg: "row" }}>
-          <Header />
+          <Sidebar />
           <HeaderMobile />
-          <Box>{children}</Box>
+          <Box overflowX="hidden">
+            <Header />
+            {children} <Footer />
+          </Box>
         </Flex>
       </Box>
     </>
