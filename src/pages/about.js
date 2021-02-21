@@ -29,7 +29,7 @@ const AboutPage = props => {
             {PageSubHeading}
           </Text>
         </Stack>
-        <Stack mt="10rem" spacing="5rem">
+        <Stack mt="10rem" spacing="5rem" id="#team">
           <Flex
             direction={{ base: "column", md: "row" }}
             justify={{ base: "flex-start", md: "space-between" }}
@@ -75,7 +75,7 @@ const AboutPage = props => {
             )}
           </Box>
         </Stack>
-        <Stack mt="10rem" spacing="5rem">
+        <Stack mt="10rem" spacing="5rem" id="partner">
           <Box>
             <Text
               fontSize="1.75rem"

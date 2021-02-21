@@ -21,7 +21,12 @@ const ServiceHeading = props => {
         </Box>
         <Box mt={{ base: "5rem", md: "0" }}>
           <Flex justify="flex-end">
-            <Link href={props.data.call_to_action_link}>
+            <Link
+              href={props.data.call_to_action_link.url}
+              _hover={{
+                textDecoration: "none",
+              }}
+            >
               <Button
                 px="0"
                 fontWeight="400"

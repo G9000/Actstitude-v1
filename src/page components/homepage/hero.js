@@ -1,10 +1,11 @@
 import React from "react"
-import { Flex, Heading, Text, Box, Grid, Button } from "@chakra-ui/react"
+import { Flex, Box, Button } from "@chakra-ui/react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { Label } from "../../components/typography/label"
 import { MainHeading } from "../../components/typography/heading"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import "./style.css"
 
 const HeroSection = () => {
@@ -54,22 +55,29 @@ const HeroSection = () => {
             <div className="grid-items-column box2" />
             <div className="grid-items-column box3" />
             <div className="grid-items-column box4" />
-            <Button
-              bg="transparent"
-              w="100%"
-              h="100%"
-              fontSize="1.75rem"
-              borderRadius="none"
-              border="0.5px solid #A7A7A7"
+            <AnchorLink
+              to="/about#team"
+              title="Team"
               className="grid-items-cta"
-              _hover={{
-                bg: "white.50",
-                color: "black.700",
-              }}
-              rightIcon={<FaAngleDoubleRight />}
             >
-              {data.prismicHomePage.data.hero_button_label}
-            </Button>
+              <Button
+                bg="transparent"
+                w="100%"
+                h="100%"
+                fontSize="clamp(1rem, 3.5vw, 1.75rem)"
+                borderRadius="none"
+                border="0.5px solid #A7A7A7"
+                className="grid-items-cta"
+                _hover={{
+                  bg: "white.50",
+                  color: "black.700",
+                }}
+                rightIcon={<FaAngleDoubleRight />}
+              >
+                {data.prismicHomePage.data.hero_button_label}
+              </Button>
+            </AnchorLink>
+
             <div className="grid-items-extender" />
           </div>
         </BackgroundImage>

@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { Flex, Box, Stack, Link } from "@chakra-ui/react"
 import { SocialIcon } from "../buttons/social buttons/index"
 import { ContactButton } from "../buttons/contact buttons/index"
@@ -52,12 +52,12 @@ const Sidebar = () => {
       borderRight=".5px solid #525050"
     >
       <Flex w="100px" h="100px" alignItems="center" justifyContent="center">
-        <Link to="/index">
+        <GatsbyLink to="/">
           <img
             src={data.prismicSidebar.data.actstitude_logo.url}
             alt={data.prismicSidebar.data.actstitude_logo.alt}
           />
-        </Link>
+        </GatsbyLink>
       </Flex>
       <Stack spacing="0">
         <ContactButton

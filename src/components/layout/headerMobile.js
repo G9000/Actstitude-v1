@@ -5,11 +5,10 @@ import {
   Flex,
   Stack,
   Text,
-  Divider,
-  Img,
   Modal,
   ModalContent,
-  Button,
+  ModalOverlay,
+  Link as ChakraLink,
 } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import "./style.css"
@@ -68,6 +67,7 @@ const HeaderMobile = () => {
           </MenuIconBox>
         </Box>
         <Modal isOpen={isOpen}>
+          <ModalOverlay bg="black.700" />
           <ModalContent
             h="100vh"
             pt="100px"
@@ -82,11 +82,14 @@ const HeaderMobile = () => {
                 <MenuItem to="/about">Partners</MenuItem>
                 <MenuItem to="/contact">Contact</MenuItem>
               </Stack>
-              <ContactButtonMobile
+              <ChakraLink
                 href={data.prismicSidebar.data.call_to_action_link.url}
+                isExternal
               >
-                {data.prismicSidebar.data.call_to_action_label}
-              </ContactButtonMobile>
+                <ContactButtonMobile>
+                  {data.prismicSidebar.data.call_to_action_label}
+                </ContactButtonMobile>
+              </ChakraLink>
             </Stack>
           </ModalContent>
         </Modal>

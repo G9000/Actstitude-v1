@@ -1,6 +1,7 @@
 import React from "react"
 import { Flex, Text, Stack } from "@chakra-ui/react"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = () => {
   return (
@@ -18,7 +19,9 @@ const Header = () => {
         spacing="2rem"
       >
         <Link to="/about">About</Link>
-        <Link to="/about">Partner</Link>
+        <AnchorLink to="/about#partner" title="Patner">
+          <span>Partner</span>
+        </AnchorLink>
         <Link to="/news">News</Link>
         <Link to="/contact">Contact</Link>
       </Stack>

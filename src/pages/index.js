@@ -9,7 +9,7 @@ import HeroSection from "../page components/homepage/hero"
 import ServiceProto from "../page components/homepage/serviceProto"
 import SectionHeading from "../page components/homepage/SectionHeading"
 import ClienteleProto from "../page components/homepage/clienteleProto"
-import CallToAction from "../page components/homepage/Cta"
+import CallToAction from "../page components/homepage/callToAction"
 import "../page components/homepage/style.css"
 
 const IndexPage = props => (

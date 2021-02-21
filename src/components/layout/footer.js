@@ -39,7 +39,8 @@ const Footer = props => {
       px="7.5%"
       py="5rem"
       justifyContent="center"
-      bg="teal.100"
+      bg="#D9D9D9"
+      color="black.700"
       flexDirection="column"
     >
       <Flex flexDirection={{ base: "column", md: "row" }}>
