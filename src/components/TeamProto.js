@@ -1,6 +1,5 @@
 import React from "react"
 import { Stack, Text } from "@chakra-ui/react"
-
 import Img from "gatsby-image"
 
 const TeamProto = props => {

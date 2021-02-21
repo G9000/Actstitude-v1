@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { Box, Stack, Link, Text } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"

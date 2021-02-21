@@ -2,12 +2,10 @@ require("dotenv").config({
   path: `.env`,
 })
 
-const linkResolver = require("./src/utils/linkResolver")
-
 module.exports = {
   siteMetadata: {
     title: `Actstitude`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Actstitude.`,
     author: `@JulioCaesar`,
   },
   plugins: [
@@ -39,21 +37,12 @@ module.exports = {
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
-        linkResolver: () => doc => linkResolver(doc),
-        htmlSerializer: ({ node, key, value }) => (
-          type,
-          element,
-          content,
-          children
-        ) => {},
-
         schemas: {
           sidebar: require("./src/schemas/sidebar.json"),
           footer: require("./src/schemas/footer.json"),
           home_page: require("./src/schemas/home.json"),
           news: require("./src/schemas/news.json"),
           about: require("./src/schemas/about.json"),
-          career: require("./src/schemas/career.json"),
           contact_page: require("./src/schemas/contact.json"),
         },
       },

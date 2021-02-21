@@ -8,10 +8,8 @@ import {
   Divider,
   Img,
   Modal,
-  ModalOverlay,
   ModalContent,
   Button,
-  useDisclosure,
 } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import "./style.css"
@@ -34,7 +32,7 @@ const HeaderMobile = () => {
       }
     }
   `)
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <Box
       borderBottom=".5px solid #525050"
@@ -82,7 +80,7 @@ const HeaderMobile = () => {
                 <MenuItem to="/about">About</MenuItem>
                 <MenuItem to="/news">News</MenuItem>
                 <MenuItem to="/about">Partners</MenuItem>
-                <MenuItem to="/about">Contact</MenuItem>
+                <MenuItem to="/contact">Contact</MenuItem>
               </Stack>
               <ContactButtonMobile
                 href={data.prismicSidebar.data.call_to_action_link.url}

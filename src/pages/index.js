@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout"
+import { graphql } from "gatsby"
 import { VStack, Flex, Box, Grid, Container } from "@chakra-ui/react"
 import SEO from "../components/seo"
 import "swiper/swiper.scss"

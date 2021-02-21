@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import { FourColGrid } from "../components/Grid"

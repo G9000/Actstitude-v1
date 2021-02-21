@@ -18,8 +18,8 @@ const Header = () => {
         spacing="2rem"
       >
         <Link to="/about">About</Link>
+        <Link to="/about">Partner</Link>
         <Link to="/news">News</Link>
-        <Link to="/">Partner</Link>
         <Link to="/contact">Contact</Link>
       </Stack>
     </Flex>
