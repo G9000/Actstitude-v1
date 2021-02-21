@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "actstitude",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Don't judge, I learned in less than 2 month",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Julio Caesar.leo.caesar@live.com>",
   "dependencies": {
     "@chakra-ui/react": "^1.3.3",
     "@emotion/react": "^11.1.5",

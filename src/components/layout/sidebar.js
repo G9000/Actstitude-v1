@@ -52,7 +52,7 @@ const Sidebar = () => {
       borderRight=".5px solid #525050"
     >
       <Flex w="100px" h="100px" alignItems="center" justifyContent="center">
-        <Link to="/">
+        <Link to="/index">
           <img
             src={data.prismicSidebar.data.actstitude_logo.url}
             alt={data.prismicSidebar.data.actstitude_logo.alt}

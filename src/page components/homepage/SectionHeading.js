@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Grid, GridItem, Link } from "@chakra-ui/react"
+import { Box, Flex, Grid, Text, Link, Button } from "@chakra-ui/react"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { SectionHeading } from "../../components/typography/heading"
 import { Label } from "../../components/typography/label"
@@ -21,19 +21,23 @@ const ServiceHeading = props => {
         </Box>
         <Box mt={{ base: "5rem", md: "0" }}>
           <Flex justify="flex-end">
-            <Link
-              href={props.data.call_to_action_link}
-              px="0"
-              fontWeight="400"
-              fontSize="clamp(1rem, 3.5vw, 1.4375rem)"
-              bg="transparent"
-              _hover={{
-                bg: "transparent",
-              }}
-            >
-              {props.data.call_to_action_label}
+            <Link href={props.data.call_to_action_link}>
+              <Button
+                px="0"
+                fontWeight="400"
+                fontSize="clamp(1rem, 3.5vw, 1.4375rem)"
+                bg="transparent"
+                rightIcon={<FaAngleDoubleRight />}
+                _hover={{
+                  bg: "transparent",
+                }}
+                _active={{
+                  bg: "transparent",
+                }}
+              >
+                {props.data.call_to_action_label}
+              </Button>
             </Link>
-            <FaAngleDoubleRight />
           </Flex>
         </Box>
       </Flex>
