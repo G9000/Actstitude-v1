@@ -4,18 +4,23 @@ import { Link } from "gatsby"
 
 const Header = () => {
   return (
-    <Flex px="5%" h="100px" alignItems="center" color="white.50">
+    <Flex
+      display={{ base: "none", lg: "flex" }}
+      px="7.5%"
+      h="100px"
+      alignItems="center"
+      color="white.50"
+    >
       <Stack
         marginLeft="auto"
         direction="row"
         fontSize="1.1875rem"
         spacing="2rem"
       >
-        <Link to="/">About</Link>
-        <Link to="/">News</Link>
+        <Link to="/about">About</Link>
+        <Link to="/news">News</Link>
         <Link to="/">Partner</Link>
-        <Link to="/">Career</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </Stack>
     </Flex>
   )

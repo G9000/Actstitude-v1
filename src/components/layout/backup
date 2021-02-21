@@ -11,8 +11,8 @@ const Layout = ({ children }) => {
       <Flex flexDirection={{ base: "column", lg: "row" }}>
         <Sidebar />
         <HeaderMobile />
-        <Flex minH="100vh" w="100%" flexDirection="column" overflowX="hidden">
-          <Box margin="0 auto" w="100%" flexGrow={1}>
+        <Flex minH="100vh" w="100%" flexDirection="column">
+          <Box overflowX="hidden" margin="0 auto" w="100%" flexGrow={1}>
             <Header />
             {children}
           </Box>

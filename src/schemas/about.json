@@ -1,0 +1,141 @@
+{
+  "Main": {
+    "section_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Section title"
+      }
+    },
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Heading"
+      }
+    },
+    "paragraph": {
+      "type": "Text",
+      "config": {
+        "label": "Paragraph"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "singapore_team": [],
+          "malaysia_team": [],
+          "partner": []
+        },
+        "choices": {
+          "singapore_team": {
+            "type": "Slice",
+            "fieldset": "Singapore Team",
+            "description": "Singapore Team",
+            "icon": "face",
+            "display": "grid",
+            "non-repeat": {
+              "singapore_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Singapore title"
+                }
+              }
+            },
+            "repeat": {
+              "picture": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Picture"
+                }
+              },
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name"
+                }
+              }
+            }
+          },
+          "malaysia_team": {
+            "type": "Slice",
+            "fieldset": "Malaysia Team",
+            "description": "Malaysia Team",
+            "icon": "face",
+            "display": "grid",
+            "non-repeat": {
+              "malaysia_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Malaysia title"
+                }
+              }
+            },
+            "repeat": {
+              "picture": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Picture"
+                }
+              },
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name"
+                }
+              }
+            }
+          },
+          "partner": {
+            "type": "Slice",
+            "fieldset": "Partner",
+            "description": "Partner on board",
+            "icon": "assignment_ind",
+            "display": "grid",
+            "non-repeat": {
+              "partner_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Partner title"
+                }
+              }
+            },
+            "repeat": {
+              "picture": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Picture"
+                }
+              },
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Link",
+                  "placeholder": "If got link to the partner website"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,82 +1,48 @@
 {
   "Main": {
-    "footer": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Footer",
-        "placeholder": "Footer"
-      }
-    },
     "tagline": {
       "type": "StructuredText",
       "config": {
-        "single": "heading2",
+        "single": "heading3",
         "label": "Tagline"
       }
     },
     "malaysia": {
-      "type": "StructuredText",
+      "type": "Text",
       "config": {
-        "single": "heading5",
         "label": "Malaysia"
       }
     },
-    "malaysia_address_line_1": {
+    "malaysia_full_address": {
       "type": "Text",
       "config": {
-        "label": "Malaysia address line 1"
+        "label": "Malaysia full address"
       }
     },
-    "malaysia_address_line_2": {
-      "type": "Text",
-      "config": {
-        "label": "Malaysia address line 2"
-      }
-    },
-    "malaysia_address_line_3": {
-      "type": "Text",
-      "config": {
-        "label": "Malaysia address line 3"
-      }
-    },
-    "malaysia_location": {
+    "malaysia_google_map": {
       "type": "Link",
       "config": {
         "allowTargetBlank": true,
-        "label": "Malaysia google location"
+        "label": "Malaysia google map"
       }
     },
     "singapore": {
-      "type": "StructuredText",
+      "type": "Text",
       "config": {
-        "single": "heading5",
         "label": "Singapore"
       }
     },
-    "singapore_address_line_1": {
+    "singapore_full_address": {
       "type": "Text",
       "config": {
-        "label": "Singapore address line 1"
+        "label": "Singapore full address"
       }
     },
-    "singapore_address_line_2": {
-      "type": "Text",
-      "config": {
-        "label": "Singapore address line 2"
-      }
-    },
-    "singapore_address_line_3": {
-      "type": "Text",
-      "config": {
-        "label": "Singapore address line 3"
-      }
-    },
-    "singapore_location": {
+    "singapore_google_map": {
       "type": "Link",
       "config": {
-        "label": "Singapore google location",
-        "allowTargetBlank": true
+        "allowTargetBlank": true,
+        "label": "Singapore google map"
       }
     }
   }

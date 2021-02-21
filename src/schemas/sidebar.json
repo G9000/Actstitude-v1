@@ -1,38 +1,45 @@
 {
   "Main": {
-    "company_logo": {
+    "actstitude_logo": {
       "type": "Image",
       "config": {
         "constraint": {},
         "thumbnails": [],
-        "label": "company logo"
+        "label": "Actstitude logo"
       }
     },
-    "email": {
+    "call_to_action_label": {
+      "type": "Text",
+      "config": {
+        "label": "Call to action label"
+      }
+    },
+    "call_to_action_link": {
       "type": "Link",
       "config": {
         "allowTargetBlank": true,
-        "label": "Email"
+        "label": "Call to action link"
       }
     },
-    "instagram": {
+    "instagram_link": {
       "type": "Link",
       "config": {
         "allowTargetBlank": true,
-        "label": "Instagram"
+        "label": "Instagram link"
       }
     },
-    "facebook": {
+    "facebook_link": {
       "type": "Link",
       "config": {
         "allowTargetBlank": true,
-        "label": "Facebook"
+        "label": "Facebook link"
       }
     },
-    "linkedin": {
+    "linkedin_link": {
       "type": "Link",
       "config": {
-        "label": "LinkedIn"
+        "allowTargetBlank": true,
+        "label": "LinkedIn link"
       }
     }
   }

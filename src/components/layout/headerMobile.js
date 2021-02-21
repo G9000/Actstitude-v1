@@ -22,20 +22,12 @@ const HeaderMobile = () => {
     query SidebarMobile {
       prismicSidebar {
         data {
-          company_logo {
+          actstitude_logo {
             url
             alt
           }
-          email {
-            url
-          }
-          facebook {
-            url
-          }
-          instagram {
-            url
-          }
-          linkedin {
+          call_to_action_label
+          call_to_action_link {
             url
           }
         }
@@ -60,8 +52,8 @@ const HeaderMobile = () => {
         <Flex w="100px" h="100px" alignItems="center" justifyContent="center">
           <Link to="/">
             <img
-              src={data.prismicSidebar.data.company_logo.url}
-              alt={data.prismicSidebar.data.company_logo.alt}
+              src={data.prismicSidebar.data.actstitude_logo.url}
+              alt={data.prismicSidebar.data.actstitude_logo.alt}
             />
           </Link>
         </Flex>
@@ -85,7 +77,20 @@ const HeaderMobile = () => {
             color="white.50"
             margin="0 auto"
           >
-            <ModalMenuLinks />
+            <Stack w="90%" margin="0 auto" spacing="5rem">
+              <Stack spacing="1rem">
+                <MenuItem to="/about">About</MenuItem>
+                <MenuItem to="/news">News</MenuItem>
+                <MenuItem to="/about">Partners</MenuItem>
+                <MenuItem to="/career">Career</MenuItem>
+                <MenuItem to="/about">Contact</MenuItem>
+              </Stack>
+              <ContactButtonMobile
+                href={data.prismicSidebar.data.call_to_action_link.url}
+              >
+                {data.prismicSidebar.data.call_to_action_label}
+              </ContactButtonMobile>
+            </Stack>
           </ModalContent>
         </Modal>
       </Flex>
@@ -140,20 +145,5 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
         {children}
       </Text>
     </Link>
-  )
-}
-
-export const ModalMenuLinks = () => {
-  return (
-    <Stack w="90%" margin="0 auto" spacing="5rem">
-      <Stack spacing="1rem">
-        <MenuItem to="/about">About</MenuItem>
-        <MenuItem to="/news">News</MenuItem>
-        <MenuItem to="/about">Partners</MenuItem>
-        <MenuItem to="/career">Career</MenuItem>
-        <MenuItem to="/about">Contact</MenuItem>
-      </Stack>
-      <ContactButtonMobile>Work with us</ContactButtonMobile>
-    </Stack>
   )
 }

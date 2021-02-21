@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading } from "@chakra-ui/react"
+import { Heading, Text } from "@chakra-ui/react"
 
 export const MainHeading = ({ children, ...props }) => (
   <Heading
@@ -15,10 +15,16 @@ export const MainHeading = ({ children, ...props }) => (
 export const SectionHeading = ({ children, ...props }) => (
   <Heading
     as="h2"
-    fontSize="clamp(1.999rem, 3.5vw, 2.875rem)"
+    fontSize="clamp(1.625rem, 3.5vw, 2.875rem)"
     fontWeight="600"
     {...props}
   >
     {children}
   </Heading>
+)
+
+export const SectionSubheading = ({ children, ...props }) => (
+  <Text fontSize="1.414rem" fontWeight="300" {...props}>
+    {children}
+  </Text>
 )

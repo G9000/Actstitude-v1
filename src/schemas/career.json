@@ -1,0 +1,110 @@
+{
+  "Main": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page title"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "singapore_opening": [],
+          "malaysia_opening": [],
+          "no_opening": []
+        },
+        "choices": {
+          "singapore_opening": {
+            "type": "Slice",
+            "fieldset": "Singapore Opening",
+            "description": "Singapore Opening",
+            "icon": "work",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Title"
+                }
+              }
+            },
+            "repeat": {
+              "job_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Job title"
+                }
+              },
+              "job_description": {
+                "type": "Text",
+                "config": {
+                  "label": "Job description"
+                }
+              }
+            }
+          },
+          "malaysia_opening": {
+            "type": "Slice",
+            "fieldset": "Malaysia Opening",
+            "description": "Malaysia Opening",
+            "icon": "work",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Title"
+                }
+              }
+            },
+            "repeat": {
+              "job_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Job title"
+                }
+              },
+              "job_description": {
+                "type": "Text",
+                "config": {
+                  "label": "Job description"
+                }
+              }
+            }
+          },
+          "no_opening": {
+            "type": "Slice",
+            "fieldset": "No opening",
+            "description": "Only when no position available",
+            "icon": "remove_circle",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Title"
+                }
+              },
+              "redirect_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Redirect Link"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,33 +5,20 @@ import { ExternalLink } from "../../components/buttons/link/index"
 import { MainHeading } from "../../components/typography/heading"
 import { FaAngleDoubleRight } from "react-icons/fa"
 
-const CallToAction = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      prismicCallToAction {
-        data {
-          heading {
-            text
-          }
-          action_title {
-            text
-          }
-          action_email {
-            url
-          }
-        }
-      }
-    }
-  `)
+const CallToAction = props => {
   return (
     <Flex
       flexDirection="column"
       alignItems="center"
       h="90vh"
-      maxW="765px"
+      px="7.5%"
       justify="center"
+      margin="0 auto"
+      textAlign="center"
+      color="white.50"
+      borderTop="1px solid #525050"
     >
-      <MainHeading>{data.prismicCallToAction.data.heading.text}</MainHeading>
+      <MainHeading maxW="765px">{props.data.section_heading.text}</MainHeading>
       <Flex
         as="button"
         mt="5rem"
@@ -41,15 +28,15 @@ const CallToAction = () => {
         fontSize="clamp(1rem, 5vw, 1.75rem)"
         alignItems="center"
         justifyContent="space-between"
-        border="1px solid white"
+        border=".5px solid #525050"
         borderRadius="none"
         _hover={{
           bg: "white.50",
           color: "black.700",
         }}
       >
-        <ExternalLink href={data.prismicCallToAction.data.action_email.url}>
-          {data.prismicCallToAction.data.action_title.text}
+        <ExternalLink href={props.data.call_to_action_link.url}>
+          {props.data.call_to_action_label}
         </ExternalLink>
         <FaAngleDoubleRight />
       </Flex>

@@ -16,20 +16,21 @@ const Sidebar = () => {
     query Sidebar {
       prismicSidebar {
         data {
-          company_logo {
+          actstitude_logo {
             url
             alt
           }
-          email {
+          call_to_action_label
+          call_to_action_link {
             url
           }
-          facebook {
+          instagram_link {
             url
           }
-          instagram {
+          facebook_link {
             url
           }
-          linkedin {
+          linkedin_link {
             url
           }
         }
@@ -41,6 +42,7 @@ const Sidebar = () => {
       position="sticky"
       top="0"
       left="0"
+      bottom="0"
       display={{ base: "none", lg: "flex" }}
       h="100vh"
       w="100px"
@@ -52,8 +54,8 @@ const Sidebar = () => {
       <Flex w="100px" h="100px" alignItems="center" justifyContent="center">
         <Link to="/">
           <img
-            src={data.prismicSidebar.data.company_logo.url}
-            alt={data.prismicSidebar.data.company_logo.alt}
+            src={data.prismicSidebar.data.actstitude_logo.url}
+            alt={data.prismicSidebar.data.actstitude_logo.alt}
           />
         </Link>
       </Flex>
@@ -61,23 +63,15 @@ const Sidebar = () => {
         <ContactButton
           className="button"
           as={Link}
-          href={data.prismicSidebar.data.email.url}
+          href={data.prismicSidebar.data.call_to_action_link.url}
           isExternal
           borderRight=".5px solid #525050"
         >
-          Work with us
+          {data.prismicSidebar.data.call_to_action_label}
         </ContactButton>
         <SocialIcon
           as={Link}
-          href={data.prismicSidebar.data.facebook.url}
-          isExternal
-          borderTop=".5px solid #525050"
-        >
-          <FaFacebookF />
-        </SocialIcon>
-        <SocialIcon
-          as={Link}
-          href={data.prismicSidebar.data.instagram.url}
+          href={data.prismicSidebar.data.instagram_link.url}
           isExternal
           borderTop=".5px solid #525050"
         >
@@ -85,7 +79,15 @@ const Sidebar = () => {
         </SocialIcon>
         <SocialIcon
           as={Link}
-          href={data.prismicSidebar.data.linkedin.url}
+          href={data.prismicSidebar.data.facebook_link.url}
+          isExternal
+          borderTop=".5px solid #525050"
+        >
+          <FaFacebookF />
+        </SocialIcon>
+        <SocialIcon
+          as={Link}
+          href={data.prismicSidebar.data.linkedin_link.url}
           isExternal
           borderTop=".5px solid #525050"
         >

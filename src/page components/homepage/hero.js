@@ -9,55 +9,45 @@ import "./style.css"
 
 const HeroSection = () => {
   const data = useStaticQuery(graphql`
-    query Home {
-      prismicHome {
+    query HomeHero {
+      prismicHomePage {
         data {
           greeting {
             text
           }
+          heading {
+            text
+          }
           hero_image {
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 2000, maxHeight: 2000) {
               ...GatsbyPrismicImageFluid
             }
             url
             alt
           }
-          hero_button
-          main_heading {
-            text
-          }
+          hero_button_label
         }
       }
     }
   `)
 
   return (
-    <div>
-      <Flex
-        paddingTop="10rem"
-        width="min(1440px, 90%)"
-        flexDirection="column"
-        margin="0 auto"
-        color="white.50"
-      >
+    <Box px="7.5%" margin="0 auto" color="white.50">
+      <Flex paddingTop="10rem" flexDirection="column">
         <Box marginBottom="5rem" w="min(75rem, 100%)">
-          <Label>{data.prismicHome.data.greeting.text}</Label>
+          <Label>{data.prismicHomePage.data.greeting.text}</Label>
           <MainHeading mt="2rem">
-            {data.prismicHome.data.main_heading.text}
+            {data.prismicHomePage.data.heading.text}
           </MainHeading>
         </Box>
       </Flex>
-      <Box
-        margin="0 auto"
-        maxW="1440px"
-        w={{ base: "100%", md: "80%" }}
-        paddingY="2rem"
-      >
+      <Box paddingY="2rem">
         <BackgroundImage
           className="hero-image"
           templateRows="repeat(2, 1fr)"
           templateColumns="repeat(5, 1fr)"
-          fluid={data.prismicHome.data.hero_image.fluid}
+          fluid={data.prismicHomePage.data.hero_image.fluid}
+          alt={data.prismicHomePage.data.hero_image.alt}
         >
           <div className="hero-items">
             <div className="box1" />
@@ -65,7 +55,6 @@ const HeroSection = () => {
             <div className="grid-items-column box3" />
             <div className="grid-items-column box4" />
             <Button
-              color="white.50"
               bg="transparent"
               w="100%"
               h="100%"
@@ -79,13 +68,13 @@ const HeroSection = () => {
               }}
               rightIcon={<FaAngleDoubleRight />}
             >
-              {data.prismicHome.data.hero_button}
+              {data.prismicHomePage.data.hero_button_label}
             </Button>
             <div className="grid-items-extender" />
           </div>
         </BackgroundImage>
       </Box>
-    </div>
+    </Box>
   )
 }
 

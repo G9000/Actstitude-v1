@@ -1,0 +1,7 @@
+.button-active {
+  text-decoration: underline;
+}
+
+.button-unactive {
+  color: #aeaeae;
+}

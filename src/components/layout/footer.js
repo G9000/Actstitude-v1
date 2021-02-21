@@ -12,7 +12,7 @@ import {
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { LearnMoreExternalLink } from "../buttons/link/index"
 
-const Footer = () => {
+const Footer = props => {
   const data = useStaticQuery(graphql`
     query Footer {
       prismicFooter {
@@ -20,22 +20,14 @@ const Footer = () => {
           tagline {
             text
           }
-          malaysia {
-            text
-          }
-          malaysia_address_line_1
-          malaysia_address_line_2
-          malaysia_address_line_3
-          malaysia_location {
+          malaysia
+          malaysia_full_address
+          malaysia_google_map {
             url
           }
-          singapore {
-            text
-          }
-          singapore_address_line_1
-          singapore_address_line_2
-          singapore_address_line_3
-          singapore_location {
+          singapore
+          singapore_full_address
+          singapore_google_map {
             url
           }
         }
@@ -44,7 +36,7 @@ const Footer = () => {
   `)
   return (
     <Flex
-      px="5%"
+      px="7.5%"
       py="5rem"
       justifyContent="center"
       bg="teal.100"
@@ -64,31 +56,27 @@ const Footer = () => {
           maxW="560px"
         >
           <Stack spacing="1rem" textAlign="left" justify="flex-start">
-            <AddressText>{data.prismicFooter.data.malaysia.text}</AddressText>
+            <CountryName>{data.prismicFooter.data.malaysia}</CountryName>
             <Box>
-              <Text>{data.prismicFooter.data.malaysia_address_line_1}</Text>
-              <Text>{data.prismicFooter.data.malaysia_address_line_2}</Text>
-              <Text>{data.prismicFooter.data.malaysia_address_line_3}</Text>
+              <Text>{data.prismicFooter.data.malaysia_full_address}</Text>
             </Box>
 
             <LearnMoreExternalLink
               target="_blank"
-              href={data.prismicFooter.data.malaysia_location.url}
+              href={data.prismicFooter.data.malaysia_google_map.url}
             >
               Get Direction
             </LearnMoreExternalLink>
           </Stack>
           <Stack spacing="1rem" textAlign="left" justify="flex-start">
-            <AddressText>{data.prismicFooter.data.singapore.text}</AddressText>
+            <CountryName>{data.prismicFooter.data.singapore}</CountryName>
             <Box>
-              <Text>{data.prismicFooter.data.singapore_address_line_1}</Text>
-              <Text>{data.prismicFooter.data.singapore_address_line_2}</Text>
-              <Text>{data.prismicFooter.data.singapore_address_line_3}</Text>
+              <Text>{data.prismicFooter.data.singapore_full_address}</Text>
             </Box>
 
             <LearnMoreExternalLink
               target="_blank"
-              href={data.prismicFooter.data.singapore_location.url}
+              href={data.prismicFooter.data.singapore_google_map.url}
             >
               Get Direction
             </LearnMoreExternalLink>
@@ -109,7 +97,7 @@ const Footer = () => {
 
 export default Footer
 
-const AddressText = ({ children, ...props }) => (
+const CountryName = ({ children, ...props }) => (
   <Text fontSize="1.4375rem" fontWeight="600" {...props}>
     {children}
   </Text>
