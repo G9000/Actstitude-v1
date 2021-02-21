@@ -82,7 +82,6 @@ const HeaderMobile = () => {
                 <MenuItem to="/about">About</MenuItem>
                 <MenuItem to="/news">News</MenuItem>
                 <MenuItem to="/about">Partners</MenuItem>
-                <MenuItem to="/career">Career</MenuItem>
                 <MenuItem to="/about">Contact</MenuItem>
               </Stack>
               <ContactButtonMobile
