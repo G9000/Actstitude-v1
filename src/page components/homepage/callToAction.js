@@ -31,7 +31,7 @@ const CallToAction = props => {
           h="80px"
           fontSize="clamp(1rem, 5vw, 1.75rem)"
           alignItems="center"
-          w={{ base: "320px", md: "400px" }}
+          w={{ base: "270px", md: "400px" }}
           justifyContent="space-between"
           border=".5px solid #525050"
           bg="transparent"

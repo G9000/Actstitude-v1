@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Text, Flex, Link, Image } from "@chakra-ui/react"
+import { Box, Text, Flex, Link } from "@chakra-ui/react"
 import BackgroundImage from "gatsby-background-image"
 import { SwiperSlide } from "swiper/react"
 import "swiper/swiper.scss"
@@ -21,12 +21,12 @@ const ServiceProto = props => {
             <Text fontSize="1.125rem" color="grey.100">
               {props.data.service_description}
             </Text>
-            <Flex align="center" w="120px" justify="space-between">
-              <Link href={props.data.service_redirection_link.url}>
+            <Link href={props.data.service_redirection_link.url}>
+              <Flex align="center" w="120px" justify="space-between">
                 {props.data.service_redirection}
-              </Link>
-              <FaArrowRight />
-            </Flex>
+                <FaArrowRight />
+              </Flex>
+            </Link>
           </ServiceContent>
         </Box>
       </ServiceContainer>
