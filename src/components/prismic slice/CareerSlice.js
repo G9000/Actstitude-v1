@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   Box,
   Flex,
@@ -7,7 +7,6 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  Divider,
   Button,
   HStack,
   Link,
@@ -18,7 +17,7 @@ import linkResolver from "../../utils/LinkResolver"
 import { FaArrowDown } from "react-icons/fa"
 import "../../themes/style.scss"
 
-const SliceTitle = ({ slice }) => {
+const CareerSlice = ({ slice }) => {
   return (
     <Box as="section">
       <Box textStyle="h4">
@@ -63,7 +62,6 @@ const SliceTitle = ({ slice }) => {
                   </Flex>
                 </AccordionButton>
                 <AccordionPanel color="inherit">
-                  <Divider borderColor="grey.400" />
                   <Flex
                     py="4rem"
                     align={{ base: "flex-start", lg: "center" }}
@@ -112,4 +110,4 @@ const SliceTitle = ({ slice }) => {
   )
 }
 
-export default SliceTitle
+export default CareerSlice

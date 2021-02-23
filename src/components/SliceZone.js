@@ -1,10 +1,10 @@
 import React from "react"
-import SliceTitle from "./prismic slice/SliceTitle"
+import CareerSlice from "./prismic slice/CareerSlice"
 import CareerContact from "./prismic slice/CareerContact"
 
 const SliceZone = ({ sliceZone }) => {
   const sliceComponents = {
-    career_opening: SliceTitle,
+    career_opening: CareerSlice,
     career_contact: CareerContact,
   }
 
