@@ -7,7 +7,7 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
   return (
-    <Box bg="black.700">
+    <Box>
       <Flex flexDirection={{ base: "column", lg: "row" }}>
         <Sidebar />
         <HeaderMobile />

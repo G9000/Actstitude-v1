@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { Box, Stack, Link, Text } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
@@ -8,7 +9,7 @@ import {
   SectionSubheading,
 } from "../components/typography/heading"
 
-const Contactpage = props => {
+const ContactPage = props => {
   const { data } = props
   const content = data.prismicContactPage.data
   const PageHeading = content.page_title.text
@@ -20,6 +21,7 @@ const Contactpage = props => {
       <Box py="10rem" px="7.5%" color="white.50">
         <Box pb="10rem">
           <SEO title="Contact" />
+          <Helmet bodyAttributes={{ class: "contact-page" }} />
           <Stack maxW="650px" spacing="5rem">
             <SectionHeading>{PageHeading}</SectionHeading>
             <Link href={ContactLink} isExternal>
@@ -34,7 +36,7 @@ const Contactpage = props => {
   )
 }
 
-export default Contactpage
+export default ContactPage
 
 export const PostQuery = graphql`
   query contact {

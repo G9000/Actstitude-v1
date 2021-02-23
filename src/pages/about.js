@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import { FourColGrid } from "../components/Grid"
@@ -8,7 +9,7 @@ import { ButtonToggler } from "../components/buttons/Button"
 import SEO from "../components/seo"
 import { SectionHeading } from "../components/typography/heading"
 import { SectionTitle } from "../components/typography/text"
-import "../themes/style.css"
+import "../themes/style.scss"
 
 const AboutPage = props => {
   const { data } = props
@@ -23,6 +24,7 @@ const AboutPage = props => {
     <Layout>
       <Box px="7.5%" color="white.50" pt="10rem" pb="20rem">
         <SEO title="About" />
+        <Helmet bodyAttributes={{ class: "about-page" }} />
         <Stack maxW="650px" spacing="2rem">
           <SectionHeading>{PageHeading}</SectionHeading>
           <Text fontSize="1.414rem" fontWeight="300">

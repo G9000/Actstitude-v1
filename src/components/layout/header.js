@@ -2,10 +2,12 @@ import React from "react"
 import { Flex, Text, Stack } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import "../../themes/style.scss"
 
 const Header = () => {
   return (
     <Flex
+      className="top-navigation"
       display={{ base: "none", lg: "flex" }}
       px="7.5%"
       h="100px"
@@ -23,6 +25,7 @@ const Header = () => {
           <span>Partner</span>
         </AnchorLink>
         <Link to="/news">News</Link>
+        <Link to="/career">Career</Link>
         <Link to="/contact">Contact</Link>
       </Stack>
     </Flex>

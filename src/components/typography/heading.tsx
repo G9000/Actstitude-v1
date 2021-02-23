@@ -14,7 +14,6 @@ export const MainHeading = ({ children, ...props }) => (
 
 export const SectionHeading = ({ children, ...props }) => (
   <Heading
-    as="h2"
     fontSize="clamp(1.625rem, 3.5vw, 2.875rem)"
     fontWeight="600"
     {...props}

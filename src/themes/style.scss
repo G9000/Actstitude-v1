@@ -1,0 +1,41 @@
+$black700: #0b0b0b;
+$black900: #050505;
+$white50: #f2f2f2;
+$grey100: #aeaeae;
+
+.home-page {
+  background-color: $black700;
+}
+
+.about-page {
+  background-color: $black700;
+}
+
+.news-page {
+  background-color: $black700;
+}
+
+.contact-page {
+  background-color: $black700;
+}
+
+.career-page .top-navigation {
+  color: $black700;
+}
+
+.career-page {
+  background-color: $white50;
+  color: $black700;
+}
+
+.button-active {
+  text-decoration: underline;
+}
+
+.button-unactive {
+  color: $grey100;
+}
+
+.custom-link {
+  text-decoration: underline;
+}

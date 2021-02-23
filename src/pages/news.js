@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { Box, Grid, Heading } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import NewsProto from "../components/NewsProto"
@@ -10,6 +11,7 @@ const NewsPage = props => (
   <Layout>
     <Box px="7.5%" color="white.50" pt="10rem" pb="20rem">
       <SEO title="News" />
+      <Helmet bodyAttributes={{ class: "news-page" }} />
       <SectionHeading pb="10rem" maxW="650px">
         Short news & announcements from the studio
       </SectionHeading>

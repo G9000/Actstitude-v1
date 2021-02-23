@@ -1,0 +1,94 @@
+{
+  "Main": {
+    "page_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page Heading"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "singapore_opening": [],
+          "career_opening": [],
+          "career_contact": []
+        },
+        "choices": {
+          "career_opening": {
+            "type": "Slice",
+            "fieldset": "Career opening",
+            "description": "Career opening",
+            "icon": "work",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Title"
+                }
+              },
+              "job_apply_redirection": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Job apply redirection"
+                }
+              }
+            },
+            "repeat": {
+              "job_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "Job title"
+                }
+              },
+              "job_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, list-item, o-list-item",
+                  "label": "Job description"
+                }
+              },
+              "job_location": {
+                "type": "Text",
+                "config": {
+                  "label": "Job location"
+                }
+              }
+            }
+          },
+          "career_contact": {
+            "type": "Slice",
+            "fieldset": "Career Contact",
+            "description": "Career Contact",
+            "icon": "markunread",
+            "display": "list",
+            "non-repeat": {
+              "contact_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Contact title"
+                }
+              },
+              "contact_paragraph": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink, list-item",
+                  "allowTargetBlank": true,
+                  "label": "Contact paragraph"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

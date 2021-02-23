@@ -80,6 +80,7 @@ const HeaderMobile = () => {
                 <MenuItem to="/about">About</MenuItem>
                 <MenuItem to="/news">News</MenuItem>
                 <MenuItem to="/about">Partners</MenuItem>
+                <MenuItem to="/career">Partners</MenuItem>
                 <MenuItem to="/contact">Contact</MenuItem>
               </Stack>
               <ChakraLink

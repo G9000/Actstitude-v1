@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env`,
 })
 
+const linkResolver = require("./src/utils/LinkResolver")
+
 module.exports = {
   siteMetadata: {
     title: `Actstitude`,
@@ -37,6 +39,14 @@ module.exports = {
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
+        linkResolver: () => doc => linkResolver(doc),
+        fetchLinks: [],
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children
+        ) => {},
         schemas: {
           sidebar: require("./src/schemas/sidebar.json"),
           footer: require("./src/schemas/footer.json"),
@@ -44,6 +54,7 @@ module.exports = {
           news: require("./src/schemas/news.json"),
           about: require("./src/schemas/about.json"),
           contact_page: require("./src/schemas/contact.json"),
+          career_page: require("./src/schemas/career.json"),
         },
       },
     },

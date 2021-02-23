@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout/layout"
 import { graphql } from "gatsby"
 import { Box, Grid } from "@chakra-ui/react"
@@ -11,10 +12,12 @@ import SectionHeading from "../page components/homepage/SectionHeading"
 import ClienteleProto from "../page components/homepage/clienteleProto"
 import CallToAction from "../page components/homepage/callToAction"
 import "../page components/homepage/style.css"
+import "../themes/style.scss"
 
 const IndexPage = props => (
   <Layout>
     <SEO title="Home" />
+    <Helmet bodyAttributes={{ class: "home-page" }} />
     <HeroSection />
     <Box mt="10rem" overflowX="visible">
       <SectionHeading data={props.data.servicesection.primary} />

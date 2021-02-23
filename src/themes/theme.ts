@@ -12,9 +12,8 @@ const Theme = extendTheme({
       marginBottom: "1.5rem",
     },
     h2: {
-      fontSize: ["xl", "3xl"],
-      lineHeight: "140%",
-      letterSpacing: "-2%",
+      fontSize: "clamp(1.625rem, 3.5vw, 2.875rem)",
+      fontWeight: "600",
     },
     h3: {
       fontSize: ["lg", "2xl"],
@@ -53,9 +52,14 @@ const Theme = extendTheme({
     },
     grey: {
       100: "#AEAEAE",
+      200: "#ADADAD",
+      300: "#989898",
+      400: "#525050",
     },
     white: {
       50: "#f2f2f2",
+      100: "#DEDEDE",
+      200: "#D4D4D4",
     },
     accent: {
       400: "#f0295b",
