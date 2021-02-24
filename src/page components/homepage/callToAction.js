@@ -8,7 +8,7 @@ const CallToAction = props => {
     <Flex
       flexDirection="column"
       alignItems="center"
-      h="90vh"
+      h="60vh"
       px="7.5%"
       justify="center"
       margin="0 auto"
