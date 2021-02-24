@@ -8,6 +8,8 @@ import {
   SectionHeading,
   SectionSubheading,
 } from "../components/typography/heading"
+import ContactForm from "../components/ContactForm"
+import ContactNew from "../components/cotnact"
 
 const ContactPage = props => {
   const { data } = props

@@ -8,9 +8,10 @@ import {
   Grid,
   GridItem,
   Button,
+  Link as ChakraLink,
 } from "@chakra-ui/react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { LearnMoreExternalLink } from "../buttons/link/index"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Footer = props => {
   const data = useStaticQuery(graphql`
@@ -37,60 +38,54 @@ const Footer = props => {
   return (
     <Flex
       px="7.5%"
-      py="5rem"
+      py="3rem"
       justifyContent="center"
       bg="#D9D9D9"
       color="black.700"
       flexDirection="column"
     >
-      <Flex flexDirection={{ base: "column", md: "row" }}>
+      <Flex
+        w="100%"
+        flexDirection={{ base: "column", xl: "row" }}
+        justify="space-between"
+      >
         <Box maxW={{ base: "100%", md: "40%", xl: "30%" }}>
           <Heading fontSize="2.375rem" fontWeight="900">
             {data.prismicFooter.data.tagline.text}
           </Heading>
         </Box>
-        <Stack
-          mt={{ base: "2rem", md: "0" }}
-          spacing="2rem"
-          direction={{ base: "column", md: "row" }}
-          marginLeft={{ base: "0", md: "auto" }}
-          maxW="560px"
+        <Flex
+          direction="column"
+          align={{ base: "flex-start", xl: "flex-end" }}
+          mt={{ base: "2rem", xl: "0" }}
         >
-          <Stack spacing="1rem" textAlign="left" justify="flex-start">
-            <CountryName>{data.prismicFooter.data.malaysia}</CountryName>
-            <Box>
-              <Text>{data.prismicFooter.data.malaysia_full_address}</Text>
-            </Box>
-
-            <LearnMoreExternalLink
-              target="_blank"
-              href={data.prismicFooter.data.malaysia_google_map.url}
-            >
-              Get Direction
-            </LearnMoreExternalLink>
+          <Stack
+            direction={{ base: "column", sm: "row" }}
+            fontSize="1.4rem"
+            fontWeight="900"
+            spacing="1rem"
+          >
+            <Link to="/about">About</Link>
+            <AnchorLink to="/about#partner" title="Patner">
+              <span>Partner</span>
+            </AnchorLink>
+            <Link to="/news">News</Link>
+            <Link to="/career">Career</Link>
+            <Link to="/contact">Contact</Link>
           </Stack>
-          <Stack spacing="1rem" textAlign="left" justify="flex-start">
-            <CountryName>{data.prismicFooter.data.singapore}</CountryName>
-            <Box>
-              <Text>{data.prismicFooter.data.singapore_full_address}</Text>
-            </Box>
-
-            <LearnMoreExternalLink
-              target="_blank"
-              href={data.prismicFooter.data.singapore_google_map.url}
-            >
-              Get Direction
-            </LearnMoreExternalLink>
+          <Stack
+            direction={{ base: "column", sm: "row" }}
+            spacing="1rem"
+            mt="2rem"
+          >
+            <ChakraLink>Malaysia</ChakraLink>
+            <ChakraLink>Singapore</ChakraLink>
+            <Link to="/">Privacy Policy</Link>
+            <Text>
+              © {new Date().getFullYear()} Actstitude. All Rights Reserved.
+            </Text>
           </Stack>
-        </Stack>
-      </Flex>
-      <Flex mt={{ base: "4rem", md: "8rem" }}>
-        <Stack spacing="1rem" direction={{ base: "column", sm: "row" }}>
-          <Link to="/">Privacy Policy</Link>
-          <Text>
-            © {new Date().getFullYear()} Actstitude. All Rights Reserved.
-          </Text>
-        </Stack>
+        </Flex>
       </Flex>
     </Flex>
   )

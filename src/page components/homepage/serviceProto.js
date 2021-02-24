@@ -21,12 +21,6 @@ const ServiceProto = props => {
             <Text fontSize="1.125rem" color="grey.100">
               {props.data.service_description}
             </Text>
-            <Link href={props.data.service_redirection_link.url}>
-              <Flex align="center" w="120px" justify="space-between">
-                {props.data.service_redirection}
-                <FaArrowRight />
-              </Flex>
-            </Link>
           </ServiceContent>
         </Box>
       </ServiceContainer>
@@ -44,7 +38,7 @@ const ServiceContainer = ({ children, ...props }) => (
 
 const ServiceContent = ({ children, ...props }) => (
   <Flex
-    height="270px"
+    height="250px"
     p="2rem"
     direction="column"
     justify="space-between"
