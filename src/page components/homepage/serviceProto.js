@@ -4,7 +4,6 @@ import BackgroundImage from "gatsby-background-image"
 import { SwiperSlide } from "swiper/react"
 import "swiper/swiper.scss"
 import "./style.css"
-import { FaArrowRight } from "react-icons/fa"
 
 const ServiceProto = props => {
   return (
@@ -18,7 +17,7 @@ const ServiceProto = props => {
           />
           <ServiceContent>
             <ServiceName>{props.data.service_name.text}</ServiceName>
-            <Text fontSize="1.125rem" color="grey.100">
+            <Text fontSize="1rem" color="grey.100">
               {props.data.service_description}
             </Text>
           </ServiceContent>
@@ -38,7 +37,7 @@ const ServiceContainer = ({ children, ...props }) => (
 
 const ServiceContent = ({ children, ...props }) => (
   <Flex
-    height="250px"
+    height="270px"
     p="2rem"
     direction="column"
     justify="space-between"
