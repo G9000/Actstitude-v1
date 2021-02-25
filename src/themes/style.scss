@@ -30,6 +30,22 @@ $grey100: #aeaeae;
   color: $black700;
 }
 
+// Homepage CSS Section //
+#hero-image {
+  height: 70vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1400px) {
+  #hero-image {
+    height: 40vh;
+  }
+}
+
+.cursor-custom {
+  cursor: url(../images//cursor.svg), auto;
+}
+
 .button-active {
   text-decoration: underline;
 }

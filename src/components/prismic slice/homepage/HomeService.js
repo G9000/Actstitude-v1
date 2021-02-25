@@ -41,32 +41,34 @@ const ServiceSlice = ({ slice }) => (
         </Box>
       </TwoColFlex>
     </Box>
-    <Swiper
-      freeMode="true"
-      spaceBetween={50}
-      slidesPerView="auto"
-      shouldSwiperUpdate
-    >
-      {slice.items.map((serviceItem, index) => (
-        <SwiperSlide>
-          <div className="gallery-item" key={`gallery-item=${index}`}>
-            <ServiceContainer width="370px" p="0">
-              <BackgroundImage
-                className="service-images"
-                fluid={serviceItem.service_thumbnail.fluid}
-                alt={serviceItem.service_thumbnail.alt}
-              />
-              <ServiceContent>
-                <ServiceName>{serviceItem.service_name.text}</ServiceName>
-                <Text fontSize="1rem" color="grey.100">
-                  {serviceItem.service_description}
-                </Text>
-              </ServiceContent>
-            </ServiceContainer>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <Box as="section" className="cursor-custom ">
+      <Swiper
+        freeMode="true"
+        spaceBetween={50}
+        slidesPerView="auto"
+        shouldSwiperUpdate
+      >
+        {slice.items.map((serviceItem, index) => (
+          <SwiperSlide>
+            <div className="gallery-item" key={`gallery-item=${index}`}>
+              <ServiceContainer width="370px" p="0">
+                <BackgroundImage
+                  className="service-images"
+                  fluid={serviceItem.service_thumbnail.fluid}
+                  alt={serviceItem.service_thumbnail.alt}
+                />
+                <ServiceContent>
+                  <ServiceName>{serviceItem.service_name.text}</ServiceName>
+                  <Text fontSize="1rem" color="grey.100">
+                    {serviceItem.service_description}
+                  </Text>
+                </ServiceContent>
+              </ServiceContainer>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   </Box>
 )
 
