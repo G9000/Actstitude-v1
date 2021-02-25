@@ -2,117 +2,121 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout/layout"
 import { graphql } from "gatsby"
-import { Box, Grid } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import SEO from "../components/seo"
 import "swiper/swiper.scss"
-import Swiper from "react-id-swiper"
-import HeroSection from "../page components/homepage/hero"
-import ServiceProto from "../page components/homepage/serviceProto"
-import SectionHeading from "../page components/homepage/SectionHeading"
-import ClienteleProto from "../page components/homepage/clienteleProto"
-import CallToAction from "../page components/homepage/callToAction"
-import "../page components/homepage/style.css"
+import SliceZone from "../components/SliceZone"
+import {
+  HomeHeader,
+  HeroSection,
+} from "../components/prismic slice/homepage/index"
+
 import "../themes/style.scss"
 
-const IndexPage = props => (
-  <Layout>
-    <SEO title="Home" />
-    <Helmet bodyAttributes={{ class: "home-page" }} />
-    <HeroSection />
-    <Box mt="10rem" overflowX="visible">
-      <SectionHeading data={props.data.servicesection.primary} />
-      <div className="cursor-custom">
-        <Swiper
-          freeMode="true"
-          spaceBetween={50}
-          slidesPerView="auto"
-          shouldSwiperUpdate
-        >
-          {props.data.servicesection.items.map(servicesection => (
-            <ServiceProto data={servicesection} />
-          ))}
-        </Swiper>
-      </div>
-    </Box>
-    <Box mt="10rem">
-      <SectionHeading data={props.data.clientelesection.primary} />
-      <Grid
-        px="7.5%"
-        gridTemplateColumns={{ base: "repeat(3, 1fr)", md: "repeat(6, 1fr)" }}
-      >
-        {props.data.clientelesection.items.map(clientelesection => (
-          <ClienteleProto data={clientelesection} />
-        ))}
-      </Grid>
-    </Box>
-    <Box mt="10rem">
-      <CallToAction data={props.data.calltoactionsection.primary} />
-    </Box>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  if (!data) return null
+  const document = data.allPrismicHomePage.edges[0].node.data
+
+  const homeHeaderContent = {
+    greeting: document.greeting,
+    title: document.page_heading,
+  }
+
+  const homeHeroContent = {
+    image: document.hero_image,
+    button: document.hero_button_label,
+  }
+
+  return (
+    <Layout>
+      <SEO title="Actstitude" />
+      <Helmet bodyAttributes={{ class: "home-page" }} />
+      <Box mt="5rem" overflowX="visible">
+        <HomeHeader homeHeaderContent={homeHeaderContent} />
+        <HeroSection homeHeroContent={homeHeroContent} />
+        <SliceZone sliceZone={document.body} />
+      </Box>
+    </Layout>
+  )
+}
 
 export default IndexPage
 
-export const ServiceQuery = graphql`
-  query Home {
-    servicesection: prismicHomePageBodyServices {
-      primary {
-        label {
-          text
-        }
-        section_heading {
-          text
-        }
-        call_to_action_label
-        call_to_action_link {
-          url
-        }
-      }
-      items {
-        service_thumbnail {
-          fluid(maxWidth: 1000) {
-            ...GatsbyPrismicImageFluid
+export const query = graphql`
+  query Homepage {
+    allPrismicHomePage {
+      edges {
+        node {
+          data {
+            greeting {
+              text
+            }
+            page_heading {
+              text
+            }
+            hero_image {
+              fluid(maxWidth: 2000) {
+                ...GatsbyPrismicImageFluid
+              }
+              alt
+            }
+            hero_button_label
+            body {
+              ... on PrismicHomePageBodyServices {
+                slice_type
+                primary {
+                  label {
+                    text
+                  }
+                  section_heading {
+                    text
+                  }
+                  mobile_helper
+                }
+                items {
+                  service_thumbnail {
+                    fluid(maxWidth: 1000) {
+                      ...GatsbyPrismicImageFluid
+                    }
+                    alt
+                  }
+                  service_name {
+                    text
+                  }
+                  service_description
+                }
+              }
+              ... on PrismicHomePageBodyClientele {
+                slice_type
+                primary {
+                  label {
+                    text
+                  }
+                  section_heading {
+                    text
+                  }
+                }
+                items {
+                  client_logo {
+                    url
+                    alt
+                  }
+                }
+              }
+              ... on PrismicHomePageBodyCallToAction {
+                slice_type
+                primary {
+                  section_heading {
+                    text
+                  }
+                  call_to_action_label
+                  call_to_action_link {
+                    url
+                  }
+                }
+              }
+            }
           }
-          url
-        }
-        service_name {
-          text
-        }
-        service_description
-        service_redirection
-        service_redirection_link {
-          url
-        }
-      }
-    }
-    clientelesection: prismicHomePageBodyClientele {
-      primary {
-        label {
-          text
-        }
-        section_heading {
-          text
-        }
-        call_to_action_label
-        call_to_action_link {
-          url
-        }
-      }
-      items {
-        client_logo {
-          url
-          alt
-        }
-      }
-    }
-    calltoactionsection: prismicHomePageBodyCallToAction {
-      primary {
-        section_heading {
-          text
-        }
-        call_to_action_label
-        call_to_action_link {
-          url
         }
       }
     }

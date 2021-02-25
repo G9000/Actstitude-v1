@@ -19,6 +19,67 @@
         "allowTargetBlank": true,
         "label": "Contact Link"
       }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "image": [],
+          "address": []
+        },
+        "choices": {
+          "image": {
+            "type": "Slice",
+            "fieldset": "Image",
+            "description": "Image",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "address": {
+            "type": "Slice",
+            "fieldset": "Address",
+            "description": "Address",
+            "icon": "call",
+            "display": "grid",
+            "non-repeat": {},
+            "repeat": {
+              "country": {
+                "type": "Text",
+                "config": {
+                  "label": "Country",
+                  "placeholder": "Malaysia"
+                }
+              },
+              "street_address": {
+                "type": "Text",
+                "config": {
+                  "label": "Street Address",
+                  "placeholder": "Selangor"
+                }
+              },
+              "google_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Google link"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -7,11 +7,11 @@
         "label": "Greeting"
       }
     },
-    "heading": {
+    "page_heading": {
       "type": "StructuredText",
       "config": {
         "single": "heading1",
-        "label": "Heading"
+        "label": "Page heading"
       }
     },
     "hero_image": {
@@ -59,17 +59,10 @@
                   "label": "Section heading"
                 }
               },
-              "call_to_action_label": {
+              "mobile_helper": {
                 "type": "Text",
                 "config": {
-                  "label": "Call to action label"
-                }
-              },
-              "call_to_action_link": {
-                "type": "Link",
-                "config": {
-                  "allowTargetBlank": true,
-                  "label": "call to action link"
+                  "label": "Mobile helper"
                 }
               }
             },
@@ -94,19 +87,6 @@
                 "config": {
                   "label": "Service description"
                 }
-              },
-              "service_redirection": {
-                "type": "Text",
-                "config": {
-                  "label": "Service redirection"
-                }
-              },
-              "service_redirection_link": {
-                "type": "Link",
-                "config": {
-                  "allowTargetBlank": true,
-                  "label": "Service redirection link"
-                }
               }
             }
           },
@@ -129,19 +109,6 @@
                 "config": {
                   "single": "heading2",
                   "label": "Section heading"
-                }
-              },
-              "call_to_action_label": {
-                "type": "Text",
-                "config": {
-                  "label": "Call to action label"
-                }
-              },
-              "call_to_action_link": {
-                "type": "Link",
-                "config": {
-                  "allowTargetBlank": true,
-                  "label": "Call to action link"
                 }
               }
             },

@@ -5,15 +5,14 @@ import {
   Heading,
   Text,
   Stack,
-  Grid,
-  GridItem,
-  Button,
   Link as ChakraLink,
+  HStack,
 } from "@chakra-ui/react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link as GatsbyLink, useStaticQuery, graphql } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { BsArrowUpRight } from "react-icons/bs"
 
-const Footer = props => {
+const Footer = () => {
   const data = useStaticQuery(graphql`
     query Footer {
       prismicFooter {
@@ -35,6 +34,8 @@ const Footer = props => {
       }
     }
   `)
+
+  const document = data.prismicFooter.data
   return (
     <Flex
       px="7.5%"
@@ -46,46 +47,77 @@ const Footer = props => {
     >
       <Flex
         w="100%"
-        flexDirection={{ base: "column", xl: "row" }}
+        flexDirection={{ base: "column", lg: "row" }}
         justify="space-between"
       >
-        <Box maxW={{ base: "100%", md: "40%", xl: "30%" }}>
-          <Heading fontSize="2.375rem" fontWeight="900">
-            {data.prismicFooter.data.tagline.text}
+        <Box p="0 2rem 3rem 0">
+          <Heading
+            fontSize="clamp(1.563rem, 3.5vw, 2.375rem)"
+            fontWeight="900"
+            maxW="450px"
+          >
+            {document.tagline.text}
           </Heading>
         </Box>
-        <Flex
-          direction="column"
-          align={{ base: "flex-start", xl: "flex-end" }}
-          mt={{ base: "2rem", xl: "0" }}
-        >
-          <Stack
-            direction={{ base: "column", sm: "row" }}
-            fontSize="1.4rem"
-            fontWeight="900"
-            spacing="1rem"
-          >
-            <Link to="/about">About</Link>
-            <AnchorLink to="/about#partner" title="Patner">
-              <span>Partner</span>
-            </AnchorLink>
-            <Link to="/news">News</Link>
-            <Link to="/career">Career</Link>
-            <Link to="/contact">Contact</Link>
-          </Stack>
-          <Stack
-            direction={{ base: "column", sm: "row" }}
-            spacing="1rem"
-            mt="2rem"
-          >
-            <ChakraLink>Malaysia</ChakraLink>
-            <ChakraLink>Singapore</ChakraLink>
-            <Link to="/">Privacy Policy</Link>
-            <Text>
-              © {new Date().getFullYear()} Actstitude. All Rights Reserved.
+        <Stack direction={{ base: "column", md: "row" }} spacing="2rem">
+          <Stack w="25ch" spacing="1rem">
+            <Text fontWeight="600" fontSize="1.2rem">
+              {document.malaysia}
             </Text>
+            <Text>{document.malaysia_full_address}</Text>
+            <HStack spacing=".5rem">
+              <ChakraLink
+                textDecoration="underline"
+                href={document.malaysia_google_map.url}
+                isExternal
+              >
+                Get Direction
+              </ChakraLink>
+              <BsArrowUpRight />
+            </HStack>
           </Stack>
-        </Flex>
+          <Stack w="25ch" spacing="1rem">
+            <Text fontWeight="600" fontSize="1.2rem">
+              {document.singapore}
+            </Text>
+            <Text>{document.singapore_full_address}</Text>
+            <HStack spacing=".5rem">
+              <ChakraLink
+                textDecoration="underline"
+                href={document.singapore_google_map.url}
+                isExternal
+              >
+                Get Direction
+              </ChakraLink>
+              <BsArrowUpRight />
+            </HStack>
+          </Stack>
+        </Stack>
+      </Flex>
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        mt="3rem"
+        justify={{ base: "flex-start", md: "space-between" }}
+      >
+        <Stack direction={{ base: "column", sm: "row" }} spacing="1rem">
+          <InternalLink to="/about">About</InternalLink>
+          <InternalLinkAnchor to="/about#partner" title="Patner">
+            <span>Partner</span>
+          </InternalLinkAnchor>
+          <InternalLink to="/news">News</InternalLink>
+          <InternalLink to="/career">Career</InternalLink>
+          <InternalLink to="/contact">Contact</InternalLink>
+        </Stack>
+        <Stack
+          direction={{ base: "column", sm: "row" }}
+          spacing="1rem"
+          mt={{ base: "1rem", md: "0" }}
+        >
+          <InternalLink to="/">Privacy Policy</InternalLink>
+          <Text>
+            © {new Date().getFullYear()} Actstitude. All Rights Reserved.
+          </Text>
+        </Stack>
       </Flex>
     </Flex>
   )
@@ -93,8 +125,22 @@ const Footer = props => {
 
 export default Footer
 
-const CountryName = ({ children, ...props }) => (
-  <Text fontSize="1.4375rem" fontWeight="600" {...props}>
-    {children}
-  </Text>
-)
+const InternalLink = ({ children, to = "/", ...rest }) => {
+  return (
+    <GatsbyLink to={to}>
+      <Text _hover={{ textDecoration: "underline" }} {...rest}>
+        {children}
+      </Text>
+    </GatsbyLink>
+  )
+}
+
+const InternalLinkAnchor = ({ children, to = "/", ...rest }) => {
+  return (
+    <AnchorLink to={to}>
+      <Text _hover={{ textDecoration: "underline" }} {...rest}>
+        {children}
+      </Text>
+    </AnchorLink>
+  )
+}

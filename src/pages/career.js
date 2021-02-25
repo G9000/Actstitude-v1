@@ -8,7 +8,7 @@ import PageHeader from "../components/PageHeader"
 import SliceZone from "../components/SliceZone"
 import "../themes/style.scss"
 
-const CareerPage = ({ data, props }) => {
+const CareerPage = ({ data }) => {
   if (!data) return null
   const document = data.allPrismicCareerPage.edges[0].node.data
 
