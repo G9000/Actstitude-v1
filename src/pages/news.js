@@ -1,20 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { Box, Grid, Heading } from "@chakra-ui/react"
+import { Box, Grid, Text } from "@chakra-ui/react"
 import Layout from "../components/layout/layout"
 import NewsProto from "../components/NewsProto"
 import SEO from "../components/seo"
-import { SectionHeading } from "../components/typography/heading"
 
 const NewsPage = props => (
   <Layout>
-    <Box px="7.5%" color="white.50" pt="10rem" pb="20rem">
+    <Box px="7.5%" color="white.50" pb="20rem">
       <SEO title="News" />
       <Helmet bodyAttributes={{ class: "news-page" }} />
-      <SectionHeading pb="10rem" maxW="650px">
-        Short news & announcements from the studio
-      </SectionHeading>
+      <Box as="section" py="5rem">
+        <Box maxW="650px">
+          <Text as="h2" textStyle="h2">
+            Short news & announcements from the studio
+          </Text>
+        </Box>
+      </Box>
+
       <Grid
         gap="4rem"
         gridTemplateColumns={{

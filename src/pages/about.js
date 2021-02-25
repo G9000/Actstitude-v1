@@ -22,15 +22,19 @@ const AboutPage = props => {
   const PartnerTitle = data.partnerlist.primary.partner_title.text
   return (
     <Layout>
-      <Box px="7.5%" color="white.50" pt="10rem" pb="20rem">
+      <Box px="7.5%" color="white.50" pb="20rem">
         <SEO title="About" />
         <Helmet bodyAttributes={{ class: "about-page" }} />
-        <Stack maxW="650px" spacing="2rem">
-          <SectionHeading>{PageHeading}</SectionHeading>
-          <Text fontSize="1.414rem" fontWeight="300">
-            {PageSubHeading}
-          </Text>
-        </Stack>
+        <Box as="section" py="5rem">
+          <Box maxW="650px">
+            <Text as="h2" textStyle="h2">
+              {PageHeading}
+            </Text>
+            <Text fontSize="1.414rem" fontWeight="300" mt="5rem">
+              {PageSubHeading}
+            </Text>
+          </Box>
+        </Box>
         <Stack mt="10rem" spacing="5rem" id="#team">
           <Flex
             direction={{ base: "column", md: "row" }}
