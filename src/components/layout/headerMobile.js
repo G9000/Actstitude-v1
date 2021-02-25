@@ -38,6 +38,7 @@ const HeaderMobile = () => {
       borderBottom=".5px solid #525050"
       h="100px"
       display={{ base: "block", lg: "none" }}
+      bg="black.700"
     >
       <Flex
         h="100%"
@@ -45,7 +46,6 @@ const HeaderMobile = () => {
         margin="auto"
         justifyContent="space-between"
         alignItems="center"
-        bg="black.700"
       >
         <Flex w="100px" h="100px" alignItems="center" justifyContent="center">
           <Link to="/">
