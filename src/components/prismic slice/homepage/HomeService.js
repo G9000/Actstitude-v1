@@ -13,14 +13,14 @@ import "./style.css"
 const ServiceSlice = ({ slice }) => (
   <Box as="section" mt="10rem">
     <Box px="7.5%" margin="0 auto" color="white.50">
-      <TwoColFlex marginBottom="10rem">
+      <TwoColFlex marginBottom="5rem">
         <Box w={{ base: "100%", md: "400px", lg: "550px", xl: "800px" }}>
           <Label color="grey.100">{slice.primary.label.text}</Label>
           <SectionHeading mt="2rem">
             {slice.primary.section_heading.text}
           </SectionHeading>
         </Box>
-        <Box mt={{ base: "5rem", md: "0" }}>
+        <Box mt={{ base: "3rem", md: "0" }}>
           <Flex justify="flex-end">
             <Button
               px="0"
@@ -94,7 +94,7 @@ const ServiceContent = ({ children, ...props }) => (
 const ServiceName = ({ children, ...props }) => (
   <Text
     fontWeight="600"
-    fontSize="1.375rem"
+    fontSize={{ base: "1.2rem", md: "1.375rem" }}
     color="linear-gradient(to right, #ef1c51 50%, black 50%)"
     transition=" all .3s ease-out"
     mt={4}

@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import "./style.css"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { ContactButtonMobile } from "../buttons/contact buttons/index"
 
 const HeaderMobile = () => {
@@ -78,9 +79,16 @@ const HeaderMobile = () => {
             <Stack w="90%" margin="0 auto" spacing="5rem">
               <Stack spacing="1rem">
                 <MenuItem to="/about">About</MenuItem>
+                <AnchorLink to="/about#partner" title="Patner">
+                  <Text
+                    fontSize="clamp(1.953rem, 5vw, 3.052rem)"
+                    fontWeight="400"
+                  >
+                    Partner
+                  </Text>
+                </AnchorLink>
                 <MenuItem to="/news">News</MenuItem>
-                <MenuItem to="/about">Partners</MenuItem>
-                <MenuItem to="/career">Partners</MenuItem>
+                <MenuItem to="/career">Career</MenuItem>
                 <MenuItem to="/contact">Contact</MenuItem>
               </Stack>
               <ChakraLink
@@ -140,7 +148,6 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
         display="block"
         fontSize="clamp(1.953rem, 5vw, 3.052rem)"
         fontWeight="400"
-        _hover={{ textDecoration: "underline" }}
         {...rest}
       >
         {children}

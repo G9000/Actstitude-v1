@@ -17,7 +17,6 @@ const ClienteleSlice = ({ slice }) => (
             {slice.primary.section_heading.text}
           </SectionHeading>
         </Box>
-        <Box mt={{ base: "5rem", md: "0" }}></Box>
       </TwoColFlex>
     </Box>
     <Grid
